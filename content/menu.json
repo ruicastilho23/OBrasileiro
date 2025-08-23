@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "name": "Traditional Chicken", "thai": "ไก่ดั้งเดิม", "price": 80 },
+    { "name": "Corn & Chicken", "thai": "ข้าวโพดและไก่", "price": 80 },
+    { "name": "Creamy Cheese & Chicken", "thai": "ครีมชีสและไก่", "price": 85 },
+    { "name": "Thai Chicken Curry", "thai": "แกงกะหรี่ไก่ไทย", "price": 85 },
+    { "name": "Tofu & Mushroom (V)", "thai": "เต้าหู้และเห็ด", "price": 95 }
+  ]
+}
