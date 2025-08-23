@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - file: "content/home.json"
+        label: "Homepage"
+        fields:
+          - {label: "Hero Headline", name: "hero_headline", widget: "string"}
+          - {label: "Hero Subtext",  name: "hero_subtext",  widget: "text"}
+          - {label: "Hero Image",    name: "hero_image",    widget: "image"}
+          - {label: "CTA Text",      name: "cta_text",      widget: "string"}
+      - file: "content/menu.json"
+        label: "Menu"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Name",      name: "name",  widget: "string"}
+              - {label: "Thai Name", name: "thai",  widget: "string", required: false}
+              - {label: "Price",     name: "price", widget: "number"}
+              - {label: "Image",     name: "image", widget: "image", required: false}
