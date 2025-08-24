@@ -2,28 +2,34 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "static/uploads"     # where uploaded images are saved in repo
+public_folder: "/static/uploads"   # how they are referenced on the site
 
 collections:
-  - name: "site"
-    label: "Site Content"
+  - name: "home"
+    label: "Homepage"
     files:
-      - file: "content/home.json"
-        label: "Homepage"
+      - label: "Homepage Content"
+        name: "home"
+        file: "content/home.json"
         fields:
-          - {label: "Hero Headline", name: "hero_headline", widget: "string"}
-          - {label: "Hero Subtext",  name: "hero_subtext",  widget: "text"}
-          - {label: "Hero Image",    name: "hero_image",    widget: "image"}
-          - {label: "CTA Text",      name: "cta_text",      widget: "string"}
-      - file: "content/menu.json"
-        label: "Menu"
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+
+  - name: "menu"
+    label: "Menu"
+    files:
+      - label: "Menu Items"
+        name: "menu"
+        file: "content/menu.json"
         fields:
           - label: "Items"
             name: "items"
             widget: "list"
             fields:
-              - {label: "Name",      name: "name",  widget: "string"}
-              - {label: "Thai Name", name: "thai",  widget: "string", required: false}
-              - {label: "Price",     name: "price", widget: "number"}
-              - {label: "Image",     name: "image", widget: "image", required: false}
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
