@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ruicastilho23/OBrasileiro
   branch: main
+
 
 media_folder: "static/uploads"     # where uploaded images are saved in repo
 public_folder: "/static/uploads"   # how they are referenced on the site
