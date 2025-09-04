@@ -64,8 +64,8 @@ const contentData = {
     "heroProducts": [
       {
         "name": "Chicken Pie with Salad",
-        "image": "https://pplx-res.cloudinary.com/image/upload/v1755780273/pplx_project_search_images/0c496705110a485371434e78ad664b137c4cd608.png",
-        "description": "Our signature traditional chicken pastel served with fresh mixed salad"
+        "image": "photos/piesalad.jpg",
+        "description": "Our signature traditional chicken pie served with fresh mixed salad"
       },
       {
         "name": "Tofu & Mushroom Pie (Vegan)",
