@@ -7,7 +7,7 @@ const contentData = {
       "keywords": "Brazilian food Koh Phangan, Brazilian pies Thailand, authentic Brazilian cuisine"
     },
     "hero": {
-      "backgroundImage": "https://pplx-res.cloudinary.com/image/upload/v1755797609/pplx_project_search_images/5ad1c42f01969119988d95cfeecac5caa6644d5e.png",
+      "backgroundImage": "photos/imagehomepage1.png",
       "headline": "O Brasileiro: Sabor e Alegria",
       "subtitle": "Authentic Brazilian flavors in the heart of Koh Phangan",
       "ctaText": "Explore Our Menu",
