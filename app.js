@@ -16,7 +16,7 @@ const contentData = {
     "highlights": [
       {
         "title": "Authentic Brazilian Pies",
-        "description": "Traditional pastéis made fresh daily with authentic recipes passed down through generations"
+        "description": "Traditional pies made fresh daily with authentic recipes passed down through generations"
       },
       {
         "title": "Fresh Tropical Ingredients", 
@@ -31,7 +31,7 @@ const contentData = {
       {
         "name": "Sarah M.",
         "location": "Australia", 
-        "text": "The best pastel I've had outside of São Paulo! Authentic flavors and perfect crispy texture.",
+        "text": "The best pie I've had outside of São Paulo! Authentic flavors and perfect crispy texture.",
         "rating": 5
       },
       {
@@ -49,7 +49,7 @@ const contentData = {
       {
         "name": "Miguel S.", 
         "location": "Spain",
-        "text": "Incredible flavors and such fresh ingredients. The cheese pastéis are absolutely perfect!",
+        "text": "Incredible flavors and such fresh ingredients. The cheese and corn cake is absolutely perfect!",
         "rating": 5
       }
     ],
@@ -58,7 +58,7 @@ const contentData = {
   "menu": {
     "meta": {
       "title": "Menu - O Brasileiro | Best Pies Koh Phangan | Brazilian Snacks Thailand",
-      "description": "Explore our authentic Brazilian menu featuring traditional pastéis, açaí bowls, fresh salads and desserts. Best Brazilian snacks in Koh Phangan, Thailand.",
+      "description": "Explore our authentic Brazilian menu featuring traditional pies, açaí bowls, fresh salads and desserts. Best Brazilian snacks in Koh Phangan, Thailand.",
       "keywords": "best pies Koh Phangan, Brazilian snacks Thailand, authentic Brazilian dishes"
     },
     "heroProducts": [
@@ -68,9 +68,9 @@ const contentData = {
         "description": "Our signature traditional chicken pie served with fresh mixed salad"
       },
       {
-        "name": "Tofu & Mushroom Pie (Vegan)",
-        "image": "https://pplx-res.cloudinary.com/image/upload/v1755780273/pplx_project_search_images/dbf3f95d0b2b9498014f45970bd4379797bde273.png", 
-        "description": "Delicious plant-based option with seasoned tofu and mushrooms"
+        "name": "Our House Salad (Vegan)",
+        "image": "photos/housesalad.jpg", 
+        "description": "Delicious plant-based option with seasoned fruits"
       },
       {
         "name": "Açaí Bowl",
@@ -136,7 +136,7 @@ const contentData = {
   },
   "about": {
     "meta": {
-      "title": "About O Brasileiro | Brazilian Culture Koh Phangan | Brazilian Restaurant Thailand",
+      "title": "O Brasileiro | Brazilian Culture Koh Phangan | Brazilian Restaurant Thailand",
       "description": "Learn the story of O Brasileiro, bringing authentic Brazilian flavors and culture to Koh Phangan. Discover our passion for traditional recipes and Brazilian hospitality.",
       "keywords": "Brazilian culture Koh Phangan, Brazilian restaurant Thailand"
     },
@@ -166,14 +166,14 @@ const contentData = {
   "gallery": {
     "meta": {
       "title": "Gallery - O Brasileiro | Brazilian Street Food Thailand | Tropical Food Experience Koh Phangan",
-      "description": "See our delicious Brazilian pies, açaí bowls, and vibrant market atmosphere. Experience authentic Brazilian street food in beautiful Koh Phangan.",
+      "description": "See our delicious Brazilian pies, açaí bowls, and classic cakes. Experience authentic Brazilian street food in beautiful Koh Phangan.",
       "keywords": "Brazilian street food Thailand, tropical food experience Koh Phangan"
     },
     "images": [
       {
-        "url": "https://pplx-res.cloudinary.com/image/upload/v1755780273/pplx_project_search_images/dbf3f95d0b2b9498014f45970bd4379797bde273.png",
-        "caption": "Fresh golden pastéis - our signature Brazilian pies made daily",
-        "alt": "Golden crispy Brazilian pastéis displayed at O Brasileiro"
+        "url": "photos/pies.jpg",
+        "caption": "Fresh golden pies - our signature Brazilian pies made daily",
+        "alt": "Golden crispy Brazilian pies displayed at O Brasileiro"
       },
       {
         "url": "https://pplx-res.cloudinary.com/image/upload/v1755852822/pplx_project_search_images/b2f702dae1e2dbbe3aa041234ded2b0691e123bd.png", 
@@ -181,8 +181,8 @@ const contentData = {
         "alt": "Beautiful açaí bowl with tropical fruits at O Brasileiro"
       },
       {
-        "url": "https://pplx-res.cloudinary.com/image/upload/v1755852821/pplx_project_search_images/dee4f104b35acaded886bf2b15af21d4feaef17a.png",
-        "caption": "The vibrant atmosphere at our Srithanu Market location", 
+        "url": "photos/chocolatecake.jpg",
+        "caption": "Classic Brazilian cakes - Carrot & Chocolate", 
         "alt": "Bustling market atmosphere at O Brasileiro Srithanu Market"
       }
     ]
@@ -214,13 +214,13 @@ const contentData = {
       }
     ],
     "hours": {
-      "monday": "10:00 AM - 8:00 PM",
-      "tuesday": "10:00 AM - 8:00 PM", 
-      "wednesday": "10:00 AM - 8:00 PM",
-      "thursday": "10:00 AM - 8:00 PM",
-      "friday": "10:00 AM - 8:00 PM",
-      "saturday": "10:00 AM - 9:00 PM",
-      "sunday": "10:00 AM - 9:00 PM"
+      "monday": "3:00 PM - 11:00 PM",
+      "tuesday": "3:00 PM - 11:00 PM", 
+      "wednesday": "3:00 PM - 11:00 PM",
+      "thursday": "3:00 PM - 11:00 PM",
+      "friday": "3:00 AM - 11:00 PM",
+      "saturday": "3:00 AM - 11:00 PM",
+      "sunday": "3:00 AM - 11:00 PM"
     },
     "specialNote": "Follow us on social media for daily specials, new menu items, and special events!"
   },
@@ -428,8 +428,8 @@ function loadContactContent() {
     const contact = contentData.contact;
     
     setTextContent('[data-editable="address"]', contact.location.address);
-    setTextContent('[data-editable="weekday"]', '10:00 AM - 8:00 PM');
-    setTextContent('[data-editable="weekend"]', '10:00 AM - 9:00 PM');
+    setTextContent('[data-editable="weekday"]', '3:00 PM - 11:00 PM');
+    setTextContent('[data-editable="weekend"]', '3:00 PM - 11:00 PM');
     setTextContent('[data-editable="instagram-handle"]', contact.social[0].handle);
     setTextContent('[data-editable="tiktok-handle"]', contact.social[1].handle);
     setTextContent('[data-editable="specialNote"]', contact.specialNote);
