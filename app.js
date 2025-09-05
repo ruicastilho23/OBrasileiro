@@ -195,7 +195,7 @@ const contentData = {
     },
     "location": {
       "name": "O Brasileiro",
-      "address": "Srithanu Market, Koh Phangan, Surat Thani, Thailand",
+      "address": "Srithanu Market, Koh Phangan, Surat Thani, Thailand +66 623 923 195",
       "coordinates": {
         "lat": 9.7756,
         "lng": 100.0581
