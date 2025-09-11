@@ -1636,3 +1636,11 @@ body {
     border: 2px solid var(--text-dark);
   }
 }
+/* === Hero text colors === */
+.hero-headline {
+    color: #f5f5f5;
+}
+
+.hero-subtitle {
+    color: #f5f5f5;
+}
