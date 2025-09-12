@@ -280,63 +280,6 @@
         </div>
     </section>
 
-    <!-- Admin Button -->
-    <button id="admin-btn" class="admin-btn">⚙️</button>
-
-    <!-- Admin Login Modal -->
-    <div id="admin-modal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Admin Login</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="admin-password" class="form-label">Password:</label>
-                    <input type="password" id="admin-password" class="form-control" placeholder="Enter admin password">
-                </div>
-                <div class="admin-error hidden" id="admin-error">Incorrect password. Please try again.</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn--secondary" id="cancel-admin">Cancel</button>
-                <button type="button" class="btn btn--primary" id="login-admin">Login</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Controls -->
-    <div id="admin-controls" class="admin-controls hidden">
-        <div class="admin-toolbar">
-            <span class="admin-status">Admin Mode Active</span>
-            <button class="btn btn--primary" id="save-changes">Save Changes</button>
-            <button class="btn btn--secondary" id="exit-admin">Exit Admin</button>
-        </div>
-    </div>
-
-    <!-- Image Upload Modal -->
-    <div id="image-modal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Update Image</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="image-url" class="form-label">Image URL:</label>
-                    <input type="url" id="image-url" class="form-control" placeholder="Enter image URL">
-                </div>
-                <div class="current-image">
-                    <p>Current image:</p>
-                    <img id="current-image-preview" src="" alt="Current image" style="max-width: 200px; max-height: 150px;">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn--secondary" id="cancel-image">Cancel</button>
-                <button type="button" class="btn btn--primary" id="update-image">Update</button>
-            </div>
-        </div>
-    </div>
-
     <script src="app.js"></script>
 </body>
 </html>
