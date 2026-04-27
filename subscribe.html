@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free 7-Day AI Meal Plan — AI Health & Wellness Hub</title>
+  <meta name="robots" content="noindex">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 520px;
+      width: 100%;
+    }
+    .header {
+      background: linear-gradient(135deg, #16a34a, #15803d);
+      padding: 40px 40px 30px;
+      text-align: center;
+    }
+    .header h1 {
+      color: white;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: #dcfce7;
+      font-size: 15px;
+    }
+    .form-body {
+      padding: 36px 40px 40px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 6px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: #16a34a;
+    }
+    .submit-btn {
+      width: 100%;
+      background: #16a34a;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .submit-btn:hover { background: #15803d; }
+    .submit-btn:disabled { background: #9ca3af; cursor: not-allowed; }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #374151;
+    }
+    .feature .check {
+      color: #16a34a;
+      font-size: 16px;
+    }
+    .success {
+      text-align: center;
+      padding: 40px;
+      display: none;
+    }
+    .success .emoji { font-size: 60px; margin-bottom: 16px; }
+    .success h2 { color: #16a34a; font-size: 24px; margin-bottom: 12px; }
+    .success p { color: #6b7280; font-size: 15px; }
+    .error-msg {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .privacy {
+      text-align: center;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 14px;
+    }
+    .privacy a { color: #6b7280; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="form-view">
+      <div class="header">
+        <h1>🥗 Free 7-Day AI Meal Plan</h1>
+        <p>Personalised, AI-generated — delivered instantly to your inbox</p>
+      </div>
+      <div class="form-body">
+        <div class="features">
+          <div class="feature"><span class="check">✅</span> 7 days of meals</div>
+          <div class="feature"><span class="check">✅</span> ~1,800–2,000 cal</div>
+          <div class="feature"><span class="check">✅</span> High protein</div>
+          <div class="feature"><span class="check">✅</span> Macro breakdown</div>
+        </div>
+        <div class="error-msg" id="error-msg"></div>
+        <form id="subscribe-form">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Your first name" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Send Me My Free Meal Plan →
+          </button>
+        </form>
+        <p class="privacy">No spam. Unsubscribe anytime. Powered by <a href="https://obrasileiro.info">O Brasileiro</a>.</p>
+      </div>
+    </div>
+    <div class="success" id="success-view">
+      <div class="emoji">🎉</div>
+      <h2>Check Your Inbox!</h2>
+      <p>Your free 7-day AI meal plan is on its way.<br>Also check your spam folder if it doesn't arrive in 1 minute.</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const errorMsg = document.getElementById('error-msg');
+    const submitBtn = document.getElementById('submit-btn');
+    const formView = document.getElementById('form-view');
+    const successView = document.getElementById('success-view');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const email = document.getElementById('email').value.trim();
+      const firstName = document.getElementById('firstName').value.trim();
+
+      if (!email) {
+        showError('Please enter your email address.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Me My Free Meal Plan →';
+        return;
+      }
+
+      try {
+        const res = await fetch('/.netlify/functions/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, firstName }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          formView.style.display = 'none';
+          successView.style.display = 'block';
+          // Redirect to thank-you page after 3 seconds
+          setTimeout(() => {
+            window.location.href = 'https://aihealthtracking.wordpress.com/your-free-7-day-ai-meal-plan-is-ready/';
+          }, 3000);
+        } else {
+          showError(data.error || 'Something went wrong. Please try again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Me My Free Meal Plan →';
+        }
+      } catch (err) {
+        showError('Connection error. Please check your internet and try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Me My Free Meal Plan →';
+      }
+    });
+
+    function showError(msg) {
+      errorMsg.textContent = msg;
+      errorMsg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
