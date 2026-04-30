@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Free 7-Day AI Meal Plan | AI Health & Wellness</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --primary: #2e7d32; --primary-light: #f1f8e9; --text: #333; --bg: #f4f7f4; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 20px; }
-    .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
-    header { background: linear-gradient(135deg, #1b5e20, #43a047); color: #fff; padding: 40px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
-    .content { padding: 40px; }
-    .day-card { border: 1px solid #eee; border-radius: 8px; margin-bottom: 25px; padding: 20px; transition: transform 0.2s; }
-    .day-card:hover { transform: translateY(-2px); border-color: var(--primary); }
-    .day-title { color: var(--primary); font-size: 1.4rem; font-weight: 700; margin-top: 0; border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; }
-    .meal-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f9f9f9; }
-    .meal-type { font-weight: 600; min-width: 100px; color: #666; }
-    .meal-desc { flex: 1; padding-left: 20px; }
-    .macro-footer { background: var(--primary-light); margin: 40px -40px -40px; padding: 30px 40px; text-align: center; }
-    @media (max-width: 600px) { .meal-row { flex-direction: column; } .meal-desc { padding-left: 0; padding-top: 5px; } }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5; color: var(--text); background: var(--bg); padding: 16px; }
+    .container { max-width: 850px; margin: 0 auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+    header { background: linear-gradient(135deg, #1b5e20, #43a047); color: #fff; padding: 32px 20px; text-align: center; }
+    header h1 { font-size: 2.2rem; letter-spacing: -1px; margin-bottom: 6px; }
+    header p { font-size: 1rem; opacity: 0.95; }
+    .content { padding: 30px 24px; }
+    .day-card { border: 1px solid #e3e3e3; border-radius: 8px; margin-bottom: 18px; padding: 16px 18px; transition: transform 0.2s; }
+    .day-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(46, 125, 50, 0.1); }
+    .day-title { color: var(--primary); font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); }
+    .meal-row { display: flex; padding: 8px 0; border-bottom: 1px solid #fafafa; }
+    .meal-row:last-child { border-bottom: none; }
+    .meal-type { font-weight: 600; min-width: 90px; color: #666; font-size: 0.95rem; }
+    .meal-desc { flex: 1; padding-left: 16px; font-size: 0.95rem; }
+    .footer-section { background: var(--primary-light); padding: 24px; text-align: center; }
+    .footer-section p { margin-bottom: 14px; font-size: 1.05rem; }
+    .footer-section strong { color: var(--primary); }
+    .print-btn { background: var(--primary); color: #fff; border: none; padding: 12px 28px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
+    .print-btn:hover { background: #1b5e20; }
+    @media (max-width: 600px) { .meal-row { flex-direction: column; } .meal-desc { padding-left: 0; padding-top: 4px; } header h1 { font-size: 1.8rem; } .content { padding: 20px 16px; } }
+    @media print { body { background: white; padding: 0; } .container { box-shadow: none; } .print-btn { display: none; } }
   </style>
 </head>
 <body>
@@ -29,17 +37,58 @@
     </header>
     <div class="content">
       <div class="day-card">
-        <h2 class="day-title">Day 1: Kickstart</h2>
-        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Greek Yogurt Bowl with blueberries, flaxseeds, and a drizzle of honey.</span></div>
-        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Grilled Chicken Salad with avocado, cherry tomatoes, and balsamic vinaigrette.</span></div>
-        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Baked Salmon with roasted asparagus and half a sweet potato.</span></div>
+        <h2 class="day-title">Day 1: Energizing Start</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Greek Yogurt Bowl with blueberries, flaxseeds, and honey. (350 kcal | P:20g C:45g F:8g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Grilled Chicken Salad with avocado, cherry tomatoes, olive oil dressing. (520 kcal | P:42g C:18g F:32g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Almonds & apple slices. (180 kcal | P:6g C:22g F:9g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Baked Salmon with roasted asparagus & sweet potato. (550 kcal | P:45g C:40g F:22g)</span></div>
       </div>
-      <!-- Additional days would follow this pattern, streamlined to remove blank spaces -->
-      <p style="text-align: center; color: #888; font-size: 0.9rem;">View the full 7-day schedule and shopping list below.</p>
+      <div class="day-card">
+        <h2 class="day-title">Day 2: Protein Power</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Scrambled eggs (3) with spinach, whole-grain toast. (380 kcal | P:25g C:32g F:16g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Turkey & hummus wrap with mixed greens. (480 kcal | P:38g C:45g F:14g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Cottage cheese with berries. (160 kcal | P:18g C:12g F:4g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Beef stir-fry with broccoli, bell peppers, brown rice. (600 kcal | P:48g C:50g F:20g)</span></div>
+      </div>
+      <div class="day-card">
+        <h2 class="day-title">Day 3: Balanced Fuel</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Protein smoothie (whey, banana, spinach, almond milk). (320 kcal | P:28g C:38g F:6g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Quinoa bowl with chickpeas, cucumber, feta, lemon dressing. (510 kcal | P:22g C:62g F:18g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Hard-boiled eggs (2). (140 kcal | P:12g C:2g F:10g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Grilled chicken thighs with roasted Brussels sprouts & quinoa. (580 kcal | P:46g C:42g F:22g)</span></div>
+      </div>
+      <div class="day-card">
+        <h2 class="day-title">Day 4: Lean & Clean</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Overnight oats with chia, protein powder, strawberries. (360 kcal | P:24g C:48g F:8g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Tuna salad with mixed greens, olive oil, whole-grain crackers. (490 kcal | P:40g C:30g F:22g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Greek yogurt with walnuts. (200 kcal | P:15g C:10g F:12g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Baked cod with green beans & wild rice. (520 kcal | P:42g C:50g F:12g)</span></div>
+      </div>
+      <div class="day-card">
+        <h2 class="day-title">Day 5: Recovery Day</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Avocado toast (2 slices) with poached eggs. (420 kcal | P:18g C:38g F:22g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Lentil soup with a side of whole-grain bread. (460 kcal | P:24g C:68g F:8g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Protein bar (low sugar). (190 kcal | P:20g C:18g F:6g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Grilled shrimp with zucchini noodles & marinara. (480 kcal | P:40g C:32g F:18g)</span></div>
+      </div>
+      <div class="day-card">
+        <h2 class="day-title">Day 6: Variety Boost</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Protein pancakes (2) with berries & maple syrup. (380 kcal | P:26g C:50g F:8g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Chicken Caesar salad (light dressing). (500 kcal | P:45g C:20g F:26g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Carrot sticks with hummus. (150 kcal | P:5g C:18g F:7g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Pork tenderloin with roasted root vegetables. (560 kcal | P:48g C:38g F:20g)</span></div>
+      </div>
+      <div class="day-card">
+        <h2 class="day-title">Day 7: Finish Strong</h2>
+        <div class="meal-row"><span class="meal-type">Breakfast</span><span class="meal-desc">Egg white omelet with mushrooms, peppers, turkey bacon. (340 kcal | P:32g C:12g F:16g)</span></div>
+        <div class="meal-row"><span class="meal-type">Lunch</span><span class="meal-desc">Grilled salmon with kale salad & vinaigrette. (530 kcal | P:44g C:20g F:30g)</span></div>
+        <div class="meal-row"><span class="meal-type">Snack</span><span class="meal-desc">Rice cakes with almond butter. (180 kcal | P:6g C:20g F:9g)</span></div>
+        <div class="meal-row"><span class="meal-type">Dinner</span><span class="meal-desc">Baked chicken breast with sweet potato & steamed broccoli. (540 kcal | P:50g C:48g F:12g)</span></div>
+      </div>
     </div>
-    <div class="macro-footer">
-      <p>Daily Average: <strong>1,900 kcal</strong> | P: 150g | C: 160g | F: 70g</p>
-      <button onclick="window.print()" style="background: var(--primary); color: #fff; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: 600;">Download / Print PDF</button>
+    <div class="footer-section">
+      <p><strong>Daily Average:</strong> ~1,900 kcal | <strong>Protein:</strong> 150g | <strong>Carbs:</strong> 160g | <strong>Fats:</strong> 70g</p>
+      <button class="print-btn" onclick="window.print()">Download / Print PDF</button>
     </div>
   </div>
 </body>
