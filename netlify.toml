@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  RESEND_API_KEY = "re_WHQSU4PM_Cng9WwAVC34wctom1avMf87P"
+  RESEND_API_KEY = "re_KsZWYhNF_FzZ2pn9TDsA8C9wQbMhRfZ3P"
   RESEND_AUDIENCE_ID = "938531ce-4872-4327-973f-7bb67013ca89"
 
 [[headers]]
